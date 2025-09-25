@@ -11,8 +11,8 @@
     <groupId>be.ucll.backend2</groupId>
     <artifactId>records_dtos</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>04-Records-DTOs</name>
-    <description>04-Records-DTOs</description>
+    <name>Records-DTOs</name>
+    <description>Records-DTOs</description>
     <url/>
     <licenses>
         <license/>
