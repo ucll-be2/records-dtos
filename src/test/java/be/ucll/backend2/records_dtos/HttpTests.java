@@ -33,7 +33,7 @@ public class HttpTests {
     @Test
     public void given2PostsInDb_whenInvokingGetPost_then2PostsAreReturned() {
         client.get()
-                .uri("/api/v1/post")
+                .uri("/api/v1/posts")
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody()
@@ -57,7 +57,7 @@ public class HttpTests {
     @Test
     public void given2PostsInDb_whenInvokingGetPostById_then1PostIsReturned() {
         client.get()
-                .uri("/api/v1/post/1")
+                .uri("/api/v1/posts/1")
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody()
@@ -76,7 +76,7 @@ public class HttpTests {
     @Test
     public void given2PostsInDb_whenInvokingPostPost_thenPostIsAddedToDb() {
         client.post()
-                .uri("/api/v1/post")
+                .uri("/api/v1/posts")
                 .bodyValue(new CreatePostDto("Post title", "Post content"))
                 .exchange()
                 .expectStatus().isCreated()

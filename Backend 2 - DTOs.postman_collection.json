@@ -7,38 +7,38 @@
 	},
 	"item": [
 		{
-			"name": "GET /api/v1/post",
+			"name": "GET /api/v1/posts",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/api/v1/post",
+					"raw": "{{host}}/api/v1/posts",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"post"
+						"posts"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET /api/v1/post/{post_id}",
+			"name": "GET /api/v1/posts/{post_id}",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/api/v1/post/{{post_id}}",
+					"raw": "{{host}}/api/v1/posts/{{post_id}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"post",
+						"posts",
 						"{{post_id}}"
 					]
 				}
@@ -46,7 +46,7 @@
 			"response": []
 		},
 		{
-			"name": "POST /api/v1/post",
+			"name": "POST /api/v1/posts",
 			"event": [
 				{
 					"listen": "test",
@@ -55,7 +55,8 @@
 							"pm.collectionVariables.set(\"post_id\", pm.response.json().id);"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -72,14 +73,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}/api/v1/post",
+					"raw": "{{host}}/api/v1/posts",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
 						"v1",
-						"post"
+						"posts"
 					]
 				}
 			},
