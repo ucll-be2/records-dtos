@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.json.JsonCompareMode;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -50,7 +51,7 @@ public class HttpTests {
                           }
                         ]
                         """,
-                        true
+                        JsonCompareMode.STRICT
                 );
     }
 
@@ -69,7 +70,7 @@ public class HttpTests {
                           "content": "I hope you enjoy it!"
                         }
                         """,
-                        true
+                        JsonCompareMode.STRICT
                 );
     }
 
@@ -89,7 +90,7 @@ public class HttpTests {
                           "content": "Post content"
                         }
                         """,
-                        true
+                        JsonCompareMode.STRICT
                 );
 
         // Test whether the post is actually saved in the database
