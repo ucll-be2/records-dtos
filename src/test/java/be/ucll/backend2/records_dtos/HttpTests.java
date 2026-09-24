@@ -7,18 +7,18 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
+import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureRestTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.json.JsonCompareMode;
-import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.test.web.servlet.client.RestTestClient;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@AutoConfigureWebTestClient
+@AutoConfigureRestTestClient
 @Sql("classpath:schema.sql")
 public class HttpTests {
     @Autowired
-    private WebTestClient client;
+    private RestTestClient client;
 
     @Autowired
     private PostRepository postRepository;
@@ -78,7 +78,7 @@ public class HttpTests {
     public void given2PostsInDb_whenInvokingPostPost_thenPostIsAddedToDb() {
         client.post()
                 .uri("/api/v1/posts")
-                .bodyValue(new CreatePostDto("Post title", "Post content"))
+                .body(new CreatePostDto("Post title", "Post content"))
                 .exchange()
                 .expectStatus().isCreated()
                 .expectBody()
