@@ -1,0 +1,20 @@
+info:
+  name: Get post with id
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{host}}/api/v1/posts/:post_id"
+  params:
+    - name: post_id
+      value: "{{post_id}}"
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
