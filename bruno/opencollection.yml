@@ -16,7 +16,7 @@ config:
 
 request:
   variables:
-    - name: host
+    - name: baseUrl
       value: http://localhost:8080
 bundled: false
 extensions:

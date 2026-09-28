@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{host}}/api/v1/posts"
+  url: "{{baseUrl}}/api/v1/posts"
   body:
     type: json
     data: "{\r
@@ -25,7 +25,7 @@ runtime:
         expression: res.body.id
         method: jsonq
       variable:
-        name: post_id
+        name: postId
         scope: runtime
 
 settings:
